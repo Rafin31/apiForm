@@ -1,4 +1,8 @@
 <?php
+
+use libphonenumber\PhoneNumber;
+use libphonenumber\PhoneNumberUtil;
+
 require '../vendor/autoload.php';
 
 $ip = $_SERVER['REMOTE_ADDR'];
@@ -10,9 +14,11 @@ $userCountryCode = $data['geoplugin_countryCode']; //will store user country cod
 // print_r($data);
 
 $phoneUtil = \libphonenumber\PhoneNumberUtil::getInstance();
-$regions = $phoneUtil->getSupportedRegions();
 
 $userPhonePrefix = $phoneUtil->getCountryCodeForRegion($userCountryCode);
+
+
+
 
 
 
@@ -65,13 +71,14 @@ $userPhonePrefix = $phoneUtil->getCountryCodeForRegion($userCountryCode);
 
                                 <input type="email" name="email" class="form-control" id="inputAddress" placeholder="Email">
                             </div>
-                            <div class="form-group">
+                            <div class="form-row">
+                                <div class="form-group col-md-6">
 
-                                <input type="text" class="form-control" name="password" id="inputAddress2" placeholder="Password">
-                            </div>
-                            <div class="form-group">
-
-                                <input type="text" class="form-control" name="confirm_password" id="inputAddress2" placeholder="Confirm Your Password">
+                                    <input type="text" class="form-control" name="password" id="password" placeholder="Password">
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <button class="button_custom" id="generate_password">Generate Password</button>
+                                </div>
                             </div>
                             <div class="form-row">
 
@@ -93,7 +100,7 @@ $userPhonePrefix = $phoneUtil->getCountryCodeForRegion($userCountryCode);
                                     </label>
                                 </div>
                             </div>
-                            <button type="submit" class="sign__up__button">Sign Up</button>
+                            <button type="submit" class="button_custom">Sign Up</button>
                         </form>
 
                     </div>
