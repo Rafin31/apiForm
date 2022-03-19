@@ -1,6 +1,6 @@
 ---
 deployment:
   tasks:
-    - export DEPLOYPATH=/home/protgmih/Asif.protugaltour.com/
+    - export DEPLOYPATH=/home/protgmih/public_html/
     - /bin/cp * $DEPLOYPATH
   
