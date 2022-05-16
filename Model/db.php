@@ -1,8 +1,8 @@
 <?php
 
-$dbname = "db";
-$dbuser = "root";
-$dbpass = "";
+$dbname = "protgmih_db";
+$dbuser = "protgmih_asif";
+$dbpass = "Iamboss@007";
 $host	= "localhost";
 
 

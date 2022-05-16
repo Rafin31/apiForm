@@ -3,6 +3,10 @@
 
 $first_name_error =   $last_name_error =  $email_error =  $password_error =  $phone_prefix_erorr =  $phone_number_error = $checkbox_error = null;
 
+function insertAPI($data)
+{
+    print_r($data);
+}
 
 if (isset($_POST['submit'])) {
     $first_name = $_POST['first_name'];
@@ -32,6 +36,15 @@ if (isset($_POST['submit'])) {
     } elseif ($checkbox == "false") {
         $checkbox_error = "*Checkbox Checked Require";
     } else {
-        echo "test pass";
+
+        $data = [
+            'first_name' => $first_name,
+            'last_name' => $last_name,
+            'email' => $email,
+            'password' => $password,
+            'phone_prefix' => $phone_prefix,
+            'phone_number' => $phone_number,
+        ];
+        insertAPI($data);
     }
 }

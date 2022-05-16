@@ -22,6 +22,7 @@ $userPhonePrefix = $phoneUtil->getCountryCodeForRegion($userCountryCode);
 
 $res = getAll();
 $data = $res[0];
+// print_r($data);
 
 $img = explode('../../Assets/images/', $data['bgImage']);
 
@@ -77,81 +78,32 @@ $clientIP =  getUserIP();
 
 <body>
 
+    <div class="data" id="data" style="display: none;">
+        <p id="clientIP"><?= $clientIP ?></p>
+        <p id="bg_img"><?= end($img) ?></p>
+        <p id="FirstButton"><?= $data['FirstButton']; ?></p>
+        <p id="SecondButtonColor"><?= $data['SecondButtonColor']; ?></p>
+        <p id="SecondButton"><?= $data['SecondButton']; ?></p>
+        <p id="userPhonePrefix"><?= "+" . $userPhonePrefix ?> </p>
+        <p id="FirstButtonColor"><?= $data['FirstButtonColor']; ?></p>
 
+        <p id="FormTitle"><?= $data['FormTitle']; ?></p>
+        <p id="FormTitleColor"><?= $data['FormTitleColor']; ?></p>
+        <p id="FirstInputBoxPlaceholder"><?= $data['FirstInputBoxPlaceholder']; ?></p>
+        <p id="SecondInputBoxPlaceholder"><?= $data['SecondInputBoxPlaceholder']; ?></p>
+        <p id="ThirdInputBoxPlaceholder"><?= $data['ThirdInputBoxPlaceholder']; ?></p>
+        <p id="FourthInputboxplaceholder"><?= $data['FourthInputboxplaceholder']; ?></p>
+        <p id="FifthInpurBoxPlaceholder"><?= $data['FifthInpurBoxPlaceholder']; ?></p>
+        <p id="checkBoxText"><?= $data['checkBoxText']; ?></p>
+        <p id="checkBoxTextColor"><?= $data['checkBoxTextColor']; ?></p>
+        <p id="SecondButtonTextColor"><?= $data['SecondButtonTextColor']; ?></p>
+        <p id="FirstButtonTextColor"><?= $data['FirstButtonTextColor']; ?></p>
 
-    <div class="form__great__wrapper" style="background-image: url('../Assets/images/<?= end($img) ?>');">
-
-        <div class="container">
-            <h3 class=" text-center mb-5">Open Your Account</h3>
-            <div class="row justify-content-center ">
-
-                <div class="col-12 col-lg-7 col-md-7 ">
-
-                    <div class="form__wrapper">
-                        <form method="post" action="#">
-                            <div class="form-row">
-                                <div class="form-group col-md-6">
-
-                                    <input type="text" class="form-control" name="first_name" id="inputEmail4" placeholder="First Name">
-                                    <span style="color: red; font-weight: 600;" class="mt-2"><?= $first_name_error  ?></span>
-                                </div>
-                                <div class="form-group col-md-6">
-
-                                    <input type="text" class="form-control" name="last_name" id="inputPassword4" placeholder="Last Name">
-                                    <span style="color: red; font-weight: 600;" class="mt-2"><?= $last_name_error  ?></span>
-                                </div>
-                            </div>
-                            <div class="form-group">
-
-                                <input type="email" name="email" class="form-control" id="inputAddress" placeholder="Email">
-                                <span style="color: red; font-weight: 600;" class="mt-2"><?= $email_error  ?></span>
-                            </div>
-                            <div class="form-row">
-                                <div class="form-group col-md-6">
-
-                                    <input type="text" class="form-control" name="password" id="password" placeholder="Password">
-                                    <span style="color: red; font-weight: 600;" class="mt-2"><?= $password_error  ?></span>
-                                </div>
-                                <div class="form-group col-md-6">
-                                    <button class="button_custom first_button" style="background-color:<?= $data['FirstButtonColor']; ?> ;" id="generate_password">
-                                        <?= $data['FirstButton']; ?></button>
-                                </div>
-                            </div>
-                            <div class="form-row">
-
-                                <div class="form-group col-md-2">
-                                    <input type="text" class="form-control" name="phone_prefix" id="phone_prefix" value=<?= "+" . $userPhonePrefix ?> readonly="readonly">
-                                </div>
-
-                                <div class="form-group col-md-10">
-                                    <input type="number" class="form-control" id="phone_number" placeholder="Phone Number" name="phone_number">
-                                    <span style="color: red; font-weight: 600;" class="mt-2"><?= $phone_number_error  ?></span>
-                                </div>
-
-
-                            </div>
-                            <div class="form-group">
-                                <div class="form-check">
-                                    <input class="form-check-input" name="checkbox" type="checkbox" id="radio_button">
-
-                                    I am over 18 years of age and I accept this Legal trams and Conditions
-                                    </label>
-                                    <br>
-                                    <span style="color: red; font-weight: 600;" class="mt-2"><?= $checkbox_error  ?></span>
-                                </div>
-                            </div>
-                            <button type="submit" name="submit" style="background-color:<?= $data['SecondButtonColor']; ?> ;" class="button_custom second_button"> <?= $data['SecondButton']; ?></button>
-                        </form>
-
-                    </div>
+    </div>
 
 
 
-                </div>
-            </div>
-
-
-        </div>
+    <div class="wrapper" id="form__wrapper">
 
     </div>
 
